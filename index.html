@@ -4,48 +4,160 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>AXON | Loja Oficial</title>
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, Helvetica, sans-serif; }
-    body { background: #0e0e0e; color: #ffffff; }
-    header { background: #000000; padding: 30px 20px; text-align: center; }
-    header img { max-width: 220px; }
-    header p { margin-top: 10px; color: #bdbdbd; font-size: 15px; }
-    .container { max-width: 1100px; margin: 40px auto; padding: 0 20px; }
-    h2 { margin-bottom: 25px; font-size: 28px; text-align: center; }
-    .products { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 25px; }
-    .card { background: #1a1a1a; border-radius: 14px; padding: 20px; text-align: center; transition: transform 0.2s ease, box-shadow 0.2s ease; }
-    .card:hover { transform: translateY(-6px); box-shadow: 0 10px 25px rgba(0,0,0,0.5); }
-    .card img { width: 100%; border-radius: 12px; margin-bottom: 15px; }
-    .card h3 { margin-bottom: 6px; font-size: 20px; }
-    .price { font-size: 22px; font-weight: bold; margin-bottom: 14px; }
-    .btn { display: inline-block; padding: 10px 22px; background: #00e676; color: #000000; border-radius: 30px; text-decoration: none; font-weight: bold; transition: background 0.2s ease; cursor: pointer; }
-    .btn:hover { background: #00c853; }
-    .pix-box { background: #121212; border-radius: 14px; padding: 25px; margin-top: 50px; text-align: center; }
-    .pix-key { background: #000; padding: 12px; border-radius: 10px; margin: 15px 0; font-size: 18px; word-break: break-all; }
-    footer { margin-top: 60px; background: #000000; padding: 20px; text-align: center; color: #777777; font-size: 14px; }
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Arial, sans-serif; }body {
+  background: linear-gradient(180deg, #0b0b0b, #111);
+  color: #ffffff;
+}
+
+header {
+  background: radial-gradient(circle at top, #111, #000);
+  padding: 40px 20px;
+  text-align: center;
+  border-bottom: 1px solid #1f1f1f;
+}
+
+header img {
+  max-width: 200px;
+  margin-bottom: 10px;
+}
+
+header p {
+  color: #cfcfcf;
+  font-size: 15px;
+  letter-spacing: 1px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 50px auto;
+  padding: 0 20px;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 35px;
+  font-size: 32px;
+  letter-spacing: 1px;
+}
+
+.products {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 30px;
+}
+
+.card {
+  background: linear-gradient(180deg, #1a1a1a, #111);
+  border-radius: 18px;
+  padding: 22px;
+  text-align: center;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  border: 1px solid #222;
+}
+
+.card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 18px 40px rgba(0,0,0,0.6);
+}
+
+.card img {
+  width: 100%;
+  border-radius: 14px;
+  margin-bottom: 18px;
+}
+
+.card h3 {
+  font-size: 21px;
+  margin-bottom: 6px;
+  letter-spacing: 0.5px;
+}
+
+.price {
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 16px;
+  color: #00e676;
+}
+
+.btn {
+  display: inline-block;
+  padding: 12px 26px;
+  background: linear-gradient(135deg, #00e676, #00c853);
+  color: #000;
+  border-radius: 40px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0, 230, 118, 0.4);
+}
+
+.pix-box {
+  margin-top: 70px;
+  background: linear-gradient(180deg, #121212, #0b0b0b);
+  border-radius: 18px;
+  padding: 35px 20px;
+  text-align: center;
+  border: 1px solid #1f1f1f;
+}
+
+.pix-box h2 {
+  margin-bottom: 15px;
+}
+
+.pix-box p {
+  color: #ccc;
+  margin-bottom: 12px;
+}
+
+.pix-key {
+  background: #000;
+  padding: 14px;
+  border-radius: 12px;
+  font-size: 20px;
+  letter-spacing: 1px;
+  margin: 15px auto;
+  max-width: 320px;
+  border: 1px dashed #00e676;
+}
+
+footer {
+  margin-top: 70px;
+  background: #000;
+  padding: 25px;
+  text-align: center;
+  color: #777;
+  font-size: 14px;
+  letter-spacing: 0.5px;
+}
+
   </style>
 </head>
 <body>  <header>
     <img src="logo-axon.png" alt="Logo AXON" />
-    <p>Camisetas esportivas • Estilo • Performance</p>
+    <p>ESTILO • PERFORMANCE • ATITUDE</p>
   </header>  <main class="container">
-    <h2>Nossas Camisetas</h2><section class="products">
+    <h2>Coleção AXON</h2><section class="products">
   <div class="card">
-    <img src="camisa-preta-axon.png" alt="Camiseta AXON Preta" />
+    <img src="camisa-preta-axon.png" alt="Camisa AXON Preta" />
     <h3>AXON Preta</h3>
     <p class="price">R$ 70,00</p>
     <a href="#pix" class="btn">Pagar com Pix</a>
   </div>
 
   <div class="card">
-    <img src="camiseta-branca.png" alt="Camiseta AXON Branca" />
-    <h3>AXON Branca</h3>
+    <img src="camisa-azul-axon.png" alt="Camisa AXON Azul" />
+    <h3>AXON Azul</h3>
     <p class="price">R$ 70,00</p>
     <a href="#pix" class="btn">Pagar com Pix</a>
   </div>
 
   <div class="card">
-    <img src="camiseta-azul.png" alt="Camiseta AXON Azul" />
-    <h3>AXON Azul</h3>
+    <img src="camisa-branca-axon.png" alt="Camisa AXON Branca" />
+    <h3>AXON Branca</h3>
     <p class="price">R$ 70,00</p>
     <a href="#pix" class="btn">Pagar com Pix</a>
   </div>
@@ -53,9 +165,9 @@
 
 <section id="pix" class="pix-box">
   <h2>Pagamento via Pix</h2>
-  <p>Use a chave Pix abaixo para realizar o pagamento:</p>
+  <p>Copie a chave Pix abaixo e realize o pagamento</p>
   <div class="pix-key">56370295809</div>
-  <p>Após o pagamento, envie o comprovante pelo WhatsApp ou Instagram da loja.</p>
+  <p>Após o pagamento, envie o comprovante para a loja.</p>
 </section>
 
   </main>  <footer>
