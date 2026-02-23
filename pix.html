@@ -14,8 +14,8 @@
     }
     h1 {
       color: #00ff88;
-      text-shadow: 0 0 6px #00ff88;
       margin-bottom: 40px;
+      text-shadow: none;
     }
     .pix-code {
       font-size: 24px;
@@ -23,6 +23,7 @@
       margin: 20px 0;
       color: #00ff88;
       word-break: break-all;
+      text-shadow: none;
     }
     img {
       max-width: 320px;
@@ -74,7 +75,15 @@
     <strong>+55 11 99290-9287</strong>
   </p>
 
-  <a href="https://api.whatsapp.com/send?phone=5511992909287&text=Ol%C3%A1!%20Acabei%20de%20realizar%20o%20pagamento%20do%20Pix%20da%20AXON.">Enviar comprovante via WhatsApp</a>
+  <a href="https://api.whatsapp.com/send?phone=5511992909287&text=Ol%C3%A1!%20Acabei%20de%20realizar%20o%20pagamento%20do%20Pix%20da%20AXON.%20Minha%20camisa%20e%20tamanho%20é%20..." 
+     onclick="return avisoWhatsApp()">Enviar comprovante via WhatsApp</a>
+
+  <script>
+    function avisoWhatsApp() {
+      alert('⚠️ Lembre-se: envie pelo WhatsApp qual camisa e qual tamanho você comprou!');
+      return true; // Permite abrir o link após o aviso
+    }
+  </script>
 
 </body>
 </html>
