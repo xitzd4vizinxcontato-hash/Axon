@@ -1,262 +1,268 @@
-<!DOCTYPE html><html lang="pt-BR">
+<!DOCTYPE html>
+<html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>AXON | Loja Oficial</title>
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Arial, sans-serif; }body {
-  background: radial-gradient(circle at top, #0f0f0f, #000);
-  color: #ffffff;
-  overflow-x: hidden;
-}
+    * { margin:0; padding:0; box-sizing:border-box; font-family:'Segoe UI',Arial,sans-serif; }
 
-header {
-  padding: 80px 20px 70px;
-  text-align: center;
-  background: linear-gradient(180deg, #000, #0b0b0b);
-  border-bottom: 1px solid #1f1f1f;
-  position: relative;
-}
+    body {
+      background: radial-gradient(circle at top, #0f0f0f, #000);
+      color: #fff;
+      overflow-x: hidden;
+    }
 
-header img {
-  max-width: 320px;
-  width: 90%;
-  margin-bottom: 22px;
-  transition: transform 0.3s ease;
-}
+    header {
+      padding: 80px 20px 70px;
+      text-align: center;
+      background: linear-gradient(180deg, #000, #0b0b0b);
+      border-bottom: 1px solid #1f1f1f;
+      position: relative;
+    }
 
-header img:hover { transform: scale(1.05) rotate(-2deg); }
+    header img {
+      max-width: 320px;
+      width: 90%;
+      margin-bottom: 22px;
+      transition: transform 0.3s ease;
+    }
 
-header p { color: #bdbdbd; letter-spacing: 4px; font-size: 13px; }
+    header img:hover { transform: scale(1.05) rotate(-2deg); }
 
-.container {
-  max-width: 1200px;
-  margin: 90px auto;
-  padding: 0 20px;
-}
+    header p { color:#bdbdbd; letter-spacing:4px; font-size:13px; text-shadow: none; }
 
-h2 {
-  text-align: center;
-  margin-bottom: 60px;
-  font-size: 40px;
-  letter-spacing: 2px;
-  text-shadow: 0 0 6px #00ff88;
-}
+    .container { max-width: 1200px; margin: 90px auto; padding:0 20px; }
 
-h2::after {
-  content: "";
-  display: block;
-  width: 90px;
-  height: 4px;
-  background: linear-gradient(90deg, #00ff88, #00c853);
-  margin: 18px auto 0;
-  border-radius: 4px;
-}
+    h2 {
+      text-align:center;
+      margin-bottom:60px;
+      font-size:40px;
+      letter-spacing:2px;
+      text-shadow:none;
+    }
 
-.products {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
-  gap: 45px;
-}
+    h2::after {
+      content:"";
+      display:block;
+      width:90px;
+      height:4px;
+      background: linear-gradient(90deg,#00ff88,#00c853);
+      margin:18px auto 0;
+      border-radius:4px;
+    }
 
-.card {
-  background: linear-gradient(180deg, #1c1c1c, #0f0f0f);
-  border-radius: 28px;
-  padding: 28px;
-  text-align: center;
-  border: 1px solid #242424;
-  transition: all 0.4s ease;
-  position: relative;
-  box-shadow: 0 15px 40px rgba(0,255,136,0.1);
-}
+    .products {
+      display:grid;
+      grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+      gap:45px;
+    }
 
-.card:hover {
-  transform: translateY(-14px) scale(1.06);
-  box-shadow: 0 35px 80px rgba(0,255,136,0.35);
-}
+    .card {
+      background: linear-gradient(180deg, #1c1c1c, #0f0f0f);
+      border-radius: 28px;
+      padding:28px;
+      text-align:center;
+      border:1px solid #242424;
+      transition: all 0.4s ease;
+      position:relative;
+      box-shadow: 0 15px 40px rgba(0,255,136,0.1);
+    }
 
-.badge {
-  position: absolute;
-  top: 18px;
-  left: 18px;
-  background: linear-gradient(135deg, #00ff88, #00c853);
-  color: #000;
-  padding: 6px 14px;
-  border-radius: 30px;
-  font-size: 12px;
-  font-weight: bold;
-  text-shadow: 0 0 2px #000;
-}
+    .card:hover {
+      transform: translateY(-14px) scale(1.06);
+      box-shadow: 0 35px 80px rgba(0,255,136,0.35);
+    }
 
-.card img {
-  width: 100%;
-  border-radius: 20px;
-  margin-bottom: 22px;
-  transition: transform 0.35s ease;
-}
+    .badge {
+      position:absolute;
+      top:18px;
+      left:18px;
+      background: linear-gradient(135deg,#00ff88,#00c853);
+      color:#000;
+      padding:6px 14px;
+      border-radius:30px;
+      font-size:12px;
+      font-weight:bold;
+      text-shadow:none;
+    }
 
-.card:hover img { transform: scale(1.08) rotate(-1deg); }
+    .card img {
+      width:100%;
+      border-radius:20px;
+      margin-bottom:22px;
+      transition: transform 0.35s ease;
+    }
 
-.card h3 { font-size: 23px; margin-bottom: 10px; text-shadow: 0 0 4px #00ff88; }
+    .card:hover img { transform: scale(1.08) rotate(-1deg); }
 
-.sizes {
-  display: flex;
-  justify-content: center;
-  gap: 12px;
-  margin: 18px 0 22px;
-}
+    .card h3 { font-size:23px; margin-bottom:10px; text-shadow:none; }
 
-.sizes label {
-  cursor: pointer;
-  border: 2px solid #00ff88;
-  border-radius: 14px;
-  font-size: 14px;
-  transition: 0.2s;
-  overflow: hidden;
-}
+    .sizes {
+      display:flex;
+      justify-content:center;
+      gap:12px;
+      margin:18px 0 22px;
+    }
 
-.sizes span {
-  display: block;
-  padding: 10px 16px;
-  border-radius: 12px;
-  transition: 0.2s;
-}
+    .sizes label {
+      cursor:pointer;
+      border:2px solid #00ff88;
+      border-radius:14px;
+      font-size:14px;
+      transition:0.2s;
+      overflow:hidden;
+    }
 
-.sizes input { display: none; }
+    .sizes span {
+      display:block;
+      padding:10px 16px;
+      border-radius:12px;
+      transition:0.2s;
+    }
 
-.sizes input:checked + span {
-  background: linear-gradient(135deg, #00ff88, #00c853);
-  color: #000;
-  font-weight: bold;
-}
+    .sizes input { display:none; }
 
-.price {
-  font-size: 26px;
-  font-weight: bold;
-  color: #00ff88;
-  margin-bottom: 22px;
-}
+    .sizes input:checked + span {
+      background: linear-gradient(135deg,#00ff88,#00c853);
+      color:#000;
+      font-weight:bold;
+    }
 
-.btn {
-  display: inline-block;
-  padding: 16px 42px;
-  background: linear-gradient(135deg, #00ff88, #00c853);
-  color: #000;
-  border-radius: 60px;
-  text-decoration: none;
-  font-weight: bold;
-  font-size: 15px;
-  transition: all 0.3s ease;
-  text-shadow: 0 0 2px #000;
-}
+    .price {
+      font-size:26px;
+      font-weight:bold;
+      color:#00ff88;
+      margin-bottom:22px;
+      text-shadow:none;
+    }
 
-.btn:hover {
-  transform: scale(1.12) rotate(-1deg);
-  box-shadow: 0 18px 50px rgba(0,255,136,0.7);
-}
+    .btn {
+      display:inline-block;
+      padding:16px 42px;
+      background: linear-gradient(135deg,#00ff88,#00c853);
+      color:#000;
+      border-radius:60px;
+      text-decoration:none;
+      font-weight:bold;
+      font-size:15px;
+      transition:all 0.3s ease;
+    }
 
-footer {
-  margin-top: 120px;
-  background: #000;
-  padding: 45px 20px;
-  text-align: center;
-  color: #777;
-  font-size: 14px;
-  border-top: 1px solid #1f1f1f;
-}
+    .btn:hover {
+      transform: scale(1.12) rotate(-1deg);
+      box-shadow:0 18px 45px rgba(0,255,136,0.7);
+    }
+
+    footer {
+      margin-top:120px;
+      background:#000;
+      padding:45px 20px;
+      text-align:center;
+      color:#777;
+      font-size:14px;
+      border-top:1px solid #1f1f1f;
+    }
 
   </style>
 </head>
-<body>  <header>
-    <img src="logo-axon.png" alt="Logo AXON" />
-    <p>ESTILO • ATITUDE • PERFORMANCE</p>
-  </header>  <main class="container">
-    <h2>Coleção AXON</h2><section class="products">
-  <!-- Camisa Preta -->
-  <div class="card">
-    <span class="badge">Mais vendido</span>
-    <img src="camisa-preta-axon.png" alt="Camisa AXON Preta" />
-    <h3>AXON Preta</h3>
-    <div class="sizes">
-      <label><input type="radio" name="size-preta"><span>12</span></label>
-      <label><input type="radio" name="size-preta"><span>14</span></label>
-      <label><input type="radio" name="size-preta"><span>16</span></label>
-      <label><input type="radio" name="size-preta"><span>P</span></label>
-      <label><input type="radio" name="size-preta"><span>M</span></label>
-      <label><input type="radio" name="size-preta"><span>G</span></label>
+<body>
+
+<header>
+  <img src="logo-axon.png" alt="Logo AXON" />
+  <p>ESTILO • ATITUDE • PERFORMANCE</p>
+</header>
+
+<main class="container">
+  <h2>Coleção AXON</h2>
+
+  <section class="products">
+
+    <!-- Camisa Preta -->
+    <div class="card">
+      <span class="badge">Mais vendido</span>
+      <img src="camisa-preta-axon.png" alt="Camisa AXON Preta" />
+      <h3>AXON Preta</h3>
+      <div class="sizes" id="sizes-preta">
+        <label><input type="radio" name="size-preta"><span>12</span></label>
+        <label><input type="radio" name="size-preta"><span>14</span></label>
+        <label><input type="radio" name="size-preta"><span>16</span></label>
+        <label><input type="radio" name="size-preta"><span>P</span></label>
+        <label><input type="radio" name="size-preta"><span>M</span></label>
+        <label><input type="radio" name="size-preta"><span>G</span></label>
+      </div>
+      <p class="price">R$ 70,00</p>
+      <a href="pix.html" class="btn" onclick="return checkSize('sizes-preta')">Pagar com Pix</a>
     </div>
-    <p class="price">R$ 70,00</p>
-    <a href="pix.html" class="btn" onclick="return checkSize('size-preta')">Pagar com Pix</a>
-  </div>
 
-  <!-- Camisa Azul -->
-  <div class="card">
-    <img src="camisa-azul-axon.png" alt="Camisa AXON Azul" />
-    <h3>AXON Azul</h3>
-    <div class="sizes">
-      <label><input type="radio" name="size-azul"><span>12</span></label>
-      <label><input type="radio" name="size-azul"><span>14</span></label>
-      <label><input type="radio" name="size-azul"><span>16</span></label>
-      <label><input type="radio" name="size-azul"><span>P</span></label>
-      <label><input type="radio" name="size-azul"><span>M</span></label>
-      <label><input type="radio" name="size-azul"><span>G</span></label>
+    <!-- Camisa Azul -->
+    <div class="card">
+      <img src="camisa-azul-axon.png" alt="Camisa AXON Azul" />
+      <h3>AXON Azul</h3>
+      <div class="sizes" id="sizes-azul">
+        <label><input type="radio" name="size-azul"><span>12</span></label>
+        <label><input type="radio" name="size-azul"><span>14</span></label>
+        <label><input type="radio" name="size-azul"><span>16</span></label>
+        <label><input type="radio" name="size-azul"><span>P</span></label>
+        <label><input type="radio" name="size-azul"><span>M</span></label>
+        <label><input type="radio" name="size-azul"><span>G</span></label>
+      </div>
+      <p class="price">R$ 70,00</p>
+      <a href="pix.html" class="btn" onclick="return checkSize('sizes-azul')">Pagar com Pix</a>
     </div>
-    <p class="price">R$ 70,00</p>
-    <a href="pix.html" class="btn" onclick="return checkSize('size-azul')">Pagar com Pix</a>
-  </div>
 
-  <!-- Camisa Branca -->
-  <div class="card">
-    <img src="camisa-branca-axon.png" alt="Camisa AXON Branca" />
-    <h3>AXON Branca</h3>
-    <div class="sizes">
-      <label><input type="radio" name="size-branca"><span>12</span></label>
-      <label><input type="radio" name="size-branca"><span>14</span></label>
-      <label><input type="radio" name="size-branca"><span>16</span></label>
-      <label><input type="radio" name="size-branca"><span>P</span></label>
-      <label><input type="radio" name="size-branca"><span>M</span></label>
-      <label><input type="radio" name="size-branca"><span>G</span></label>
+    <!-- Camisa Branca -->
+    <div class="card">
+      <img src="camisa-branca-axon.png" alt="Camisa AXON Branca" />
+      <h3>AXON Branca</h3>
+      <div class="sizes" id="sizes-branca">
+        <label><input type="radio" name="size-branca"><span>12</span></label>
+        <label><input type="radio" name="size-branca"><span>14</span></label>
+        <label><input type="radio" name="size-branca"><span>16</span></label>
+        <label><input type="radio" name="size-branca"><span>P</span></label>
+        <label><input type="radio" name="size-branca"><span>M</span></label>
+        <label><input type="radio" name="size-branca"><span>G</span></label>
+      </div>
+      <p class="price">R$ 70,00</p>
+      <a href="pix.html" class="btn" onclick="return checkSize('sizes-branca')">Pagar com Pix</a>
     </div>
-    <p class="price">R$ 70,00</p>
-    <a href="pix.html" class="btn" onclick="return checkSize('size-branca')">Pagar com Pix</a>
-  </div>
 
-  <!-- Camisa Vermelha -->
-  <div class="card">
-    <img src="camisa-vermelha-axon.png" alt="Camisa AXON Vermelha" />
-    <h3>AXON Vermelha</h3>
-    <div class="sizes">
-      <label><input type="radio" name="size-vermelha"><span>12</span></label>
-      <label><input type="radio" name="size-vermelha"><span>14</span></label>
-      <label><input type="radio" name="size-vermelha"><span>16</span></label>
-      <label><input type="radio" name="size-vermelha"><span>P</span></label>
-      <label><input type="radio" name="size-vermelha"><span>M</span></label>
-      <label><input type="radio" name="size-vermelha"><span>G</span></label>
+    <!-- Camisa Vermelha -->
+    <div class="card">
+      <img src="camisa-vermelha-axon.png" alt="Camisa AXON Vermelha" />
+      <h3>AXON Vermelha</h3>
+      <div class="sizes" id="sizes-vermelha">
+        <label><input type="radio" name="size-vermelha"><span>12</span></label>
+        <label><input type="radio" name="size-vermelha"><span>14</span></label>
+        <label><input type="radio" name="size-vermelha"><span>16</span></label>
+        <label><input type="radio" name="size-vermelha"><span>P</span></label>
+        <label><input type="radio" name="size-vermelha"><span>M</span></label>
+        <label><input type="radio" name="size-vermelha"><span>G</span></label>
+      </div>
+      <p class="price">R$ 70,00</p>
+      <a href="pix.html" class="btn" onclick="return checkSize('sizes-vermelha')">Pagar com Pix</a>
     </div>
-    <p class="price">R$ 70,00</p>
-    <a href="pix.html" class="btn" onclick="return checkSize('size-vermelha')">Pagar com Pix</a>
-  </div>
 
-</section>
+  </section>
+</main>
 
-  </main>  <footer>
-    © 2026 AXON — Streetwear original
-  </footer>  <script>
-    function checkSize(group) {
-      const sizes = document.getElementsByName(group);
-      let selected = false;
-      for (let i = 0; i < sizes.length; i++) {
-        if (sizes[i].checked) { selected = true; break; }
-      }
-      if (!selected) {
-        alert('Escolha um tamanho antes de pagar!');
-        return false;
-      }
-      const btn = event.target;
-      btn.style.background = 'linear-gradient(135deg, #00c853, #00ff88)';
-      btn.style.color = '#000';
-      btn.style.boxShadow = '0 20px 50px rgba(0,255,136,0.7)';
-      return true;
-    }
-  </script></body>
+<footer>
+  © 2026 AXON — Streetwear original
+</footer>
+
+<script>
+function checkSize(groupId) {
+  const group = document.getElementById(groupId);
+  const radios = group.querySelectorAll('input[type="radio"]');
+  let selected = false;
+  radios.forEach(r => { if(r.checked) selected = true; });
+  if(!selected) {
+    alert('Escolha um tamanho antes de pagar!');
+    return false;
+  }
+  return true;
+}
+</script>
+
+</body>
 </html>
