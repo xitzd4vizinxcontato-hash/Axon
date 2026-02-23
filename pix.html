@@ -1,131 +1,220 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
+<!DOCTYPE html><html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pagamento Pix | AXON</title>
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AXON | Loja Oficial</title>
   <style>
-    * {
-      box-sizing: border-box;
-      font-family: 'Segoe UI', Arial, sans-serif;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Arial, sans-serif; }body {
+  background: radial-gradient(circle at top, #0f0f0f, #000);
+  color: #ffffff;
+  overflow-x: hidden;
+}
 
-    body {
-      margin: 0;
-      background: radial-gradient(circle at top, #0f0f0f, #000);
-      color: #fff;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 100vh;
-      padding: 20px;
-    }
+header {
+  padding: 80px 20px 70px;
+  text-align: center;
+  background: linear-gradient(180deg, #000, #0b0b0b);
+  border-bottom: 1px solid #1f1f1f;
+  position: relative;
+}
 
-    .box {
-      background: linear-gradient(180deg, #1c1c1c, #0f0f0f);
-      border-radius: 28px;
-      padding: 36px 28px 40px;
-      max-width: 420px;
-      width: 100%;
-      text-align: center;
-      border: 1px solid #242424;
-      box-shadow: 0 25px 60px rgba(0,0,0,0.85);
-    }
+header img {
+  max-width: 300px; /* LOGO MAIOR */
+  width: 90%;
+  margin-bottom: 22px;
+}
 
-    .logo {
-      max-width: 200px;
-      width: 90%;
-      margin-bottom: 12px;
-    }
+header p { color: #bdbdbd; letter-spacing: 4px; font-size: 13px; }
 
-    h1 {
-      font-size: 26px;
-      margin: 18px 0 8px;
-      letter-spacing: 1px;
-    }
+.container {
+  max-width: 1200px;
+  margin: 90px auto;
+  padding: 0 20px;
+}
 
-    .valor {
-      font-size: 18px;
-      color: #ccc;
-      margin-bottom: 18px;
-    }
+h2 {
+  text-align: center;
+  margin-bottom: 60px;
+  font-size: 40px;
+  letter-spacing: 2px;
+}
 
-    .qr {
-      background: #fff;
-      border-radius: 20px;
-      padding: 14px;
-      margin: 18px auto 22px;
-      max-width: 260px;
-    }
+h2::after {
+  content: "";
+  display: block;
+  width: 90px;
+  height: 4px;
+  background: linear-gradient(90deg, #00ff88, #00c853);
+  margin: 18px auto 0;
+  border-radius: 4px;
+}
 
-    .qr img {
-      width: 100%;
-      display: block;
-      border-radius: 14px;
-    }
+.products {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+  gap: 45px;
+}
 
-    .pix {
-      background: #000;
-      padding: 14px;
-      border-radius: 14px;
-      margin-bottom: 22px;
-      font-size: 18px;
-      letter-spacing: 1px;
-      color: #00ff88;
-      word-break: break-all;
-    }
+.card {
+  background: linear-gradient(180deg, #1c1c1c, #0f0f0f);
+  border-radius: 28px;
+  padding: 28px;
+  text-align: center;
+  border: 1px solid #242424;
+  transition: all 0.4s ease;
+  position: relative;
+}
 
-    .btn {
-      display: block;
-      padding: 15px;
-      background: linear-gradient(135deg, #00ff88, #00c853);
-      color: #000;
-      border-radius: 60px;
-      text-decoration: none;
-      font-weight: bold;
-      font-size: 16px;
-      transition: 0.3s;
-    }
+.card:hover {
+  transform: translateY(-14px) scale(1.05);
+  box-shadow: 0 35px 80px rgba(0,0,0,0.85);
+}
 
-    .btn:hover {
-      transform: scale(1.08);
-      box-shadow: 0 16px 40px rgba(0,255,136,0.6);
-    }
+.badge {
+  position: absolute;
+  top: 18px;
+  left: 18px;
+  background: linear-gradient(135deg, #00ff88, #00c853);
+  color: #000;
+  padding: 6px 14px;
+  border-radius: 30px;
+  font-size: 12px;
+  font-weight: bold;
+}
 
-    p {
-      font-size: 14px;
-      color: #ccc;
-      margin-top: 18px;
-      line-height: 1.5;
-    }
+.card img {
+  width: 100%;
+  border-radius: 20px;
+  margin-bottom: 22px;
+  transition: transform 0.35s ease;
+}
+
+.card:hover img { transform: scale(1.08); }
+
+.card h3 { font-size: 23px; margin-bottom: 10px; }
+
+.sizes {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin: 18px 0 22px;
+}
+
+.sizes label {
+  cursor: pointer;
+  border: 2px solid #00ff88;
+  border-radius: 14px;
+  font-size: 14px;
+  transition: 0.2s;
+  overflow: hidden;
+}
+
+.sizes span {
+  display: block;
+  padding: 10px 16px;
+  border-radius: 12px;
+  transition: 0.2s;
+}
+
+.sizes input { display: none; }
+
+.sizes input:checked + span {
+  background: linear-gradient(135deg, #00ff88, #00c853);
+  color: #000;
+  font-weight: bold;
+}
+
+.price {
+  font-size: 26px;
+  font-weight: bold;
+  color: #00ff88;
+  margin-bottom: 22px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 16px 42px;
+  background: linear-gradient(135deg, #00ff88, #00c853);
+  color: #000;
+  border-radius: 60px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 15px;
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  transform: scale(1.12);
+  box-shadow: 0 18px 45px rgba(0,255,136,0.6);
+}
+
+footer {
+  margin-top: 120px;
+  background: #000;
+  padding: 45px 20px;
+  text-align: center;
+  color: #777;
+  font-size: 14px;
+  border-top: 1px solid #1f1f1f;
+}
+
   </style>
 </head>
-<body>
+<body>  <header>
+    <img src="logo-axon.png" alt="Logo AXON" />
+    <p>ESTILO • ATITUDE • PERFORMANCE</p>
+  </header>  <main class="container">
+    <h2>Coleção AXON</h2><section class="products">
 
-  <div class="box">
-    <img src="logo-axon.png" alt="AXON" class="logo">
+  <div class="card">
+    <span class="badge">Mais vendido</span>
+    <img src="camisa-preta-axon.png" alt="Camisa AXON Preta" />
+    <h3>AXON Preta</h3>
 
-    <h1>Pagamento via Pix</h1>
-    <div class="valor">Valor: <strong>R$ 70,00</strong></div>
+    <div class="sizes">
 
-    <div class="qr">
-      <img src="qrcode-70reais-axon.png" alt="QR Code Pix AXON">
-    </div>
+<label><input type="radio" name="SIZE_GROUP"><span>12</span></label> <label><input type="radio" name="SIZE_GROUP"><span>14</span></label> <label><input type="radio" name="SIZE_GROUP"><span>16</span></label> <label><input type="radio" name="SIZE_GROUP"><span>P</span></label> <label><input type="radio" name="SIZE_GROUP"><span>M</span></label> <label><input type="radio" name="SIZE_GROUP"><span>G</span></label>
 
-    <div class="pix">56370295809</div>
-
-    <a class="btn"
-       href="https://wa.me/5511992909287?text=Oi!%20Acabei%20de%20fazer%20o%20pagamento%20da%20camisa%20AXON.%20Segue%20o%20comprovante:"
-       target="_blank">
-      Enviar comprovante no WhatsApp
-    </a>
-
-    <p>
-      Após o pagamento, envie o comprovante pelo WhatsApp.<br>
-      Entraremos em contato para confirmar o pedido. 🖤
-    </p>
+</div><p class="price">R$ 70,00</p>
+    <a href="pix.html" class="btn" onclick="return checkSize('size-preta')">Pagar com Pix</a>
   </div>
 
-</body>
+  <div class="card">
+    <img src="camisa-azul-axon.png" alt="Camisa AXON Azul" />
+    <h3>AXON Azul</h3>
+
+    <div class="sizes">
+
+<label><input type="radio" name="SIZE_GROUP"><span>12</span></label> <label><input type="radio" name="SIZE_GROUP"><span>14</span></label> <label><input type="radio" name="SIZE_GROUP"><span>16</span></label> <label><input type="radio" name="SIZE_GROUP"><span>P</span></label> <label><input type="radio" name="SIZE_GROUP"><span>M</span></label> <label><input type="radio" name="SIZE_GROUP"><span>G</span></label>
+
+</div><p class="price">R$ 70,00</p>
+    <a href="pix.html" class="btn" onclick="return checkSize('size-azul')">Pagar com Pix</a>
+  </div>
+
+  <div class="card">
+    <img src="camisa-branca-axon.png" alt="Camisa AXON Branca" />
+    <h3>AXON Branca</h3>
+
+    <div class="sizes">
+
+<label><input type="radio" name="SIZE_GROUP"><span>12</span></label> <label><input type="radio" name="SIZE_GROUP"><span>14</span></label> <label><input type="radio" name="SIZE_GROUP"><span>16</span></label> <label><input type="radio" name="SIZE_GROUP"><span>P</span></label> <label><input type="radio" name="SIZE_GROUP"><span>M</span></label> <label><input type="radio" name="SIZE_GROUP"><span>G</span></label>
+
+</div><p class="price">R$ 70,00</p>
+    <a href="pix.html" class="btn" onclick="return checkSize('size-branca')">Pagar com Pix</a>
+  </div>
+
+</section>
+
+  </main>  <footer>
+    © 2026 AXON — Streetwear original
+  </footer>  <script>
+    function checkSize(group) {
+      const sizes = document.getElementsByName(group);
+      for (let i = 0; i < sizes.length; i++) {
+        if (sizes[i].checked) return true;
+      }
+      alert('Escolha um tamanho antes de pagar!');
+      return false;
+    }
+  </script></body>
 </html>
