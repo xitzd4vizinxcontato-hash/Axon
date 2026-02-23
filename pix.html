@@ -4,43 +4,72 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Pagamento Pix | AXON</title>
+
   <style>
+    * {
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Arial, sans-serif;
+    }
+
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
-      background: radial-gradient(circle at top, #0e0e0e, #000);
+      background: radial-gradient(circle at top, #0f0f0f, #000);
       color: #fff;
       display: flex;
       align-items: center;
       justify-content: center;
       min-height: 100vh;
+      padding: 20px;
     }
 
     .box {
-      background: linear-gradient(180deg, #1b1b1b, #0f0f0f);
-      border-radius: 24px;
-      padding: 35px;
+      background: linear-gradient(180deg, #1c1c1c, #0f0f0f);
+      border-radius: 28px;
+      padding: 36px 28px 40px;
       max-width: 420px;
       width: 100%;
       text-align: center;
-      border: 1px solid #2a2a2a;
-      box-shadow: 0 20px 50px rgba(0,0,0,0.7);
+      border: 1px solid #242424;
+      box-shadow: 0 25px 60px rgba(0,0,0,0.85);
     }
 
-    img {
-      max-width: 150px;
-      margin-bottom: 20px;
+    .logo {
+      max-width: 200px;
+      width: 90%;
+      margin-bottom: 12px;
     }
 
     h1 {
-      margin-bottom: 10px;
+      font-size: 26px;
+      margin: 18px 0 8px;
+      letter-spacing: 1px;
+    }
+
+    .valor {
+      font-size: 18px;
+      color: #ccc;
+      margin-bottom: 18px;
+    }
+
+    .qr {
+      background: #fff;
+      border-radius: 20px;
+      padding: 14px;
+      margin: 18px auto 22px;
+      max-width: 260px;
+    }
+
+    .qr img {
+      width: 100%;
+      display: block;
+      border-radius: 14px;
     }
 
     .pix {
       background: #000;
       padding: 14px;
-      border-radius: 12px;
-      margin: 20px 0;
+      border-radius: 14px;
+      margin-bottom: 22px;
       font-size: 18px;
       letter-spacing: 1px;
       color: #00ff88;
@@ -49,11 +78,10 @@
 
     .btn {
       display: block;
-      margin-top: 20px;
-      padding: 14px;
+      padding: 15px;
       background: linear-gradient(135deg, #00ff88, #00c853);
       color: #000;
-      border-radius: 50px;
+      border-radius: 60px;
       text-decoration: none;
       font-weight: bold;
       font-size: 16px;
@@ -61,14 +89,14 @@
     }
 
     .btn:hover {
-      transform: scale(1.05);
-      box-shadow: 0 10px 30px rgba(0,255,136,0.4);
+      transform: scale(1.08);
+      box-shadow: 0 16px 40px rgba(0,255,136,0.6);
     }
 
     p {
-      color: #ccc;
       font-size: 14px;
-      margin-top: 15px;
+      color: #ccc;
+      margin-top: 18px;
       line-height: 1.5;
     }
   </style>
@@ -76,24 +104,26 @@
 <body>
 
   <div class="box">
-    <img src="logo-axon.png" alt="AXON Logo">
+    <img src="logo-axon.png" alt="AXON" class="logo">
 
     <h1>Pagamento via Pix</h1>
-    <p>Valor: <strong>R$ 70,00</strong></p>
+    <div class="valor">Valor: <strong>R$ 70,00</strong></div>
 
-    <div class="pix">
-      56370295809
+    <div class="qr">
+      <img src="qrcode-70reais-axon.png" alt="QR Code Pix AXON">
     </div>
+
+    <div class="pix">56370295809</div>
 
     <a class="btn"
        href="https://wa.me/5511992909287?text=Oi!%20Acabei%20de%20fazer%20o%20pagamento%20da%20camisa%20AXON.%20Segue%20o%20comprovante:"
        target="_blank">
-       Enviar comprovante no WhatsApp
+      Enviar comprovante no WhatsApp
     </a>
 
     <p>
       Após o pagamento, envie o comprovante pelo WhatsApp.<br>
-      Em breve entraremos em contato. 🖤
+      Entraremos em contato para confirmar o pedido. 🖤
     </p>
   </div>
 
