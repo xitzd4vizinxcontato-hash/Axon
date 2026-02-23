@@ -18,19 +18,12 @@ header {
   position: relative;
 }
 
-header::after {
-  content: "";
-  position: absolute;
-  bottom: -70px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 320px;
-  height: 140px;
-  background: radial-gradient(circle, rgba(0,255,136,0.4), transparent 70%);
-  filter: blur(50px);
+header img {
+  max-width: 300px; /* LOGO MAIOR */
+  width: 90%;
+  margin-bottom: 22px;
 }
 
-header img { max-width: 210px; margin-bottom: 20px; }
 header p { color: #bdbdbd; letter-spacing: 4px; font-size: 13px; }
 
 .container {
@@ -70,13 +63,11 @@ h2::after {
   border: 1px solid #242424;
   transition: all 0.4s ease;
   position: relative;
-  opacity: 0;
-  transform: translateY(40px);
 }
 
-.card.show {
-  opacity: 1;
-  transform: translateY(0);
+.card:hover {
+  transform: translateY(-14px) scale(1.05);
+  box-shadow: 0 35px 80px rgba(0,0,0,0.85);
 }
 
 .badge {
@@ -89,11 +80,6 @@ h2::after {
   border-radius: 30px;
   font-size: 12px;
   font-weight: bold;
-}
-
-.card:hover {
-  transform: translateY(-14px) scale(1.05);
-  box-shadow: 0 35px 80px rgba(0,0,0,0.85);
 }
 
 .card img {
@@ -110,15 +96,25 @@ h2::after {
 .sizes {
   display: flex;
   justify-content: center;
-  gap: 10px;
-  margin: 15px 0 20px;
+  gap: 12px;
+  margin: 18px 0 22px;
 }
 
-.sizes span {
-  border: 1px solid #00ff88;
-  padding: 6px 12px;
-  border-radius: 10px;
-  font-size: 13px;
+.sizes label {
+  cursor: pointer;
+  border: 2px solid #00ff88;
+  padding: 8px 14px;
+  border-radius: 14px;
+  font-size: 14px;
+  transition: 0.2s;
+}
+
+.sizes input { display: none; }
+
+.sizes input:checked + span {
+  background: #00ff88;
+  color: #000;
+  font-weight: bold;
 }
 
 .price {
@@ -167,25 +163,43 @@ footer {
     <span class="badge">Mais vendido</span>
     <img src="camisa-preta-axon.png" alt="Camisa AXON Preta" />
     <h3>AXON Preta</h3>
-    <div class="sizes"><span>P</span><span>M</span><span>G</span></div>
+
+    <div class="sizes">
+      <label><input type="radio" name="size-preta"><span>P</span></label>
+      <label><input type="radio" name="size-preta"><span>M</span></label>
+      <label><input type="radio" name="size-preta"><span>G</span></label>
+    </div>
+
     <p class="price">R$ 70,00</p>
-    <a href="pix.html" class="btn">Pagar com Pix</a>
+    <a href="pix.html" class="btn" onclick="return checkSize('size-preta')">Pagar com Pix</a>
   </div>
 
   <div class="card">
     <img src="camisa-azul-axon.png" alt="Camisa AXON Azul" />
     <h3>AXON Azul</h3>
-    <div class="sizes"><span>P</span><span>M</span><span>G</span></div>
+
+    <div class="sizes">
+      <label><input type="radio" name="size-azul"><span>P</span></label>
+      <label><input type="radio" name="size-azul"><span>M</span></label>
+      <label><input type="radio" name="size-azul"><span>G</span></label>
+    </div>
+
     <p class="price">R$ 70,00</p>
-    <a href="pix.html" class="btn">Pagar com Pix</a>
+    <a href="pix.html" class="btn" onclick="return checkSize('size-azul')">Pagar com Pix</a>
   </div>
 
   <div class="card">
     <img src="camisa-branca-axon.png" alt="Camisa AXON Branca" />
     <h3>AXON Branca</h3>
-    <div class="sizes"><span>P</span><span>M</span><span>G</span></div>
+
+    <div class="sizes">
+      <label><input type="radio" name="size-branca"><span>P</span></label>
+      <label><input type="radio" name="size-branca"><span>M</span></label>
+      <label><input type="radio" name="size-branca"><span>G</span></label>
+    </div>
+
     <p class="price">R$ 70,00</p>
-    <a href="pix.html" class="btn">Pagar com Pix</a>
+    <a href="pix.html" class="btn" onclick="return checkSize('size-branca')">Pagar com Pix</a>
   </div>
 
 </section>
@@ -193,15 +207,13 @@ footer {
   </main>  <footer>
     © 2026 AXON — Streetwear original
   </footer>  <script>
-    const cards = document.querySelectorAll('.card');
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('show');
-        }
-      });
-    }, { threshold: 0.2 });
-
-    cards.forEach(card => observer.observe(card));
+    function checkSize(group) {
+      const sizes = document.getElementsByName(group);
+      for (let i = 0; i < sizes.length; i++) {
+        if (sizes[i].checked) return true;
+      }
+      alert('Escolha um tamanho antes de pagar!');
+      return false;
+    }
   </script></body>
 </html>
