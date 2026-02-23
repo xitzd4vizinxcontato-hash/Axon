@@ -103,16 +103,23 @@ h2::after {
 .sizes label {
   cursor: pointer;
   border: 2px solid #00ff88;
-  padding: 8px 14px;
   border-radius: 14px;
   font-size: 14px;
+  transition: 0.2s;
+  overflow: hidden;
+}
+
+.sizes span {
+  display: block;
+  padding: 10px 16px;
+  border-radius: 12px;
   transition: 0.2s;
 }
 
 .sizes input { display: none; }
 
 .sizes input:checked + span {
-  background: #00ff88;
+  background: linear-gradient(135deg, #00ff88, #00c853);
   color: #000;
   font-weight: bold;
 }
@@ -165,12 +172,10 @@ footer {
     <h3>AXON Preta</h3>
 
     <div class="sizes">
-      <label><input type="radio" name="size-preta"><span>P</span></label>
-      <label><input type="radio" name="size-preta"><span>M</span></label>
-      <label><input type="radio" name="size-preta"><span>G</span></label>
-    </div>
 
-    <p class="price">R$ 70,00</p>
+<label><input type="radio" name="SIZE_GROUP"><span>12</span></label> <label><input type="radio" name="SIZE_GROUP"><span>14</span></label> <label><input type="radio" name="SIZE_GROUP"><span>16</span></label> <label><input type="radio" name="SIZE_GROUP"><span>P</span></label> <label><input type="radio" name="SIZE_GROUP"><span>M</span></label> <label><input type="radio" name="SIZE_GROUP"><span>G</span></label>
+
+</div><p class="price">R$ 70,00</p>
     <a href="pix.html" class="btn" onclick="return checkSize('size-preta')">Pagar com Pix</a>
   </div>
 
@@ -179,12 +184,10 @@ footer {
     <h3>AXON Azul</h3>
 
     <div class="sizes">
-      <label><input type="radio" name="size-azul"><span>P</span></label>
-      <label><input type="radio" name="size-azul"><span>M</span></label>
-      <label><input type="radio" name="size-azul"><span>G</span></label>
-    </div>
 
-    <p class="price">R$ 70,00</p>
+<label><input type="radio" name="SIZE_GROUP"><span>12</span></label> <label><input type="radio" name="SIZE_GROUP"><span>14</span></label> <label><input type="radio" name="SIZE_GROUP"><span>16</span></label> <label><input type="radio" name="SIZE_GROUP"><span>P</span></label> <label><input type="radio" name="SIZE_GROUP"><span>M</span></label> <label><input type="radio" name="SIZE_GROUP"><span>G</span></label>
+
+</div><p class="price">R$ 70,00</p>
     <a href="pix.html" class="btn" onclick="return checkSize('size-azul')">Pagar com Pix</a>
   </div>
 
@@ -193,12 +196,10 @@ footer {
     <h3>AXON Branca</h3>
 
     <div class="sizes">
-      <label><input type="radio" name="size-branca"><span>P</span></label>
-      <label><input type="radio" name="size-branca"><span>M</span></label>
-      <label><input type="radio" name="size-branca"><span>G</span></label>
-    </div>
 
-    <p class="price">R$ 70,00</p>
+<label><input type="radio" name="SIZE_GROUP"><span>12</span></label> <label><input type="radio" name="SIZE_GROUP"><span>14</span></label> <label><input type="radio" name="SIZE_GROUP"><span>16</span></label> <label><input type="radio" name="SIZE_GROUP"><span>P</span></label> <label><input type="radio" name="SIZE_GROUP"><span>M</span></label> <label><input type="radio" name="SIZE_GROUP"><span>G</span></label>
+
+</div><p class="price">R$ 70,00</p>
     <a href="pix.html" class="btn" onclick="return checkSize('size-branca')">Pagar com Pix</a>
   </div>
 
